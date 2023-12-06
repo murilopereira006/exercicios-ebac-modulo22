@@ -1,5 +1,5 @@
 describe('exercicio 2', () => {
   it('fluxo de checkout', () => {
-    cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+    cy.login('Jasen_Donnelly3@hotmail.com', 'text123')
   })
 })
