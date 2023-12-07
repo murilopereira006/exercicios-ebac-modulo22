@@ -13,18 +13,3 @@ Cypress.Commands.add('login', (email, password) => {
     })
     cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
 })
-
-Cypress.Commands.add('addItemInCart', (nameProduct, quantity, color, size) => {
-    const fd = new FormData();
-    fd.append('attribute_size', size)
-    fd.append('attribute_color', color)
-    fd.append('quantity', quantity)
-
-    cy.request({
-        url: `http://lojaebac.ebaconline.art.br/product/${nameProduct}/`,
-        method: 'POST',
-        body: fd
-    }).then(function (response) { console.log(response) })
-
-    cy.visit('http://lojaebac.ebaconline.art.br/carrinho/')
-})
