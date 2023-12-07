@@ -1,27 +1,30 @@
 Cypress.Commands.add('login', (email, password) => {
-
     const fd = new FormData();
-    fd.append('log', email)
-    fd.append('pwd', password)
-    fd.append('wp-submit', "Acessar")
-    fd.append('redirect_to', "http://lojaebac.ebaconline.art.br/minha-conta/")
-    fd.append('cookie', 1)
+    fd.append('username', email)
+    fd.append('password', password)
+    fd.append('woocommerce-login-nonce', "4f4ce69f63")
+    fd.append('r_wp_http_referer', "/minha-conta/")
+    fd.append('login', 'Login')
 
     cy.request({
         url: 'http://lojaebac.ebaconline.art.br/minha-conta/',
         method: 'POST',
         body: fd
-    }).then(response => {
-        console.log(response);
-        response.headers['set-cookie'].forEach(cookie => {
-            const firstPart = cookie.split(';')[0]
-            const divisor = firstPart.indexOf('=')
-            const key = firstPart.substr(0, divisor)
-            const value = firstPart.substr(divisor + 1)
-
-            cy.setcookie(key, value)
-        });
     })
+    cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+})
 
-    cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+Cypress.Commands.add('addItemInCart', (nameProduct, quantity, color, size) => {
+    const fd = new FormData();
+    fd.append('attribute_size', size)
+    fd.append('attribute_color', color)
+    fd.append('quantity', quantity)
+
+    cy.request({
+        url: `http://lojaebac.ebaconline.art.br/product/${nameProduct}/`,
+        method: 'POST',
+        body: fd
+    }).then(function (response) { console.log(response) })
+
+    cy.visit('http://lojaebac.ebaconline.art.br/carrinho/')
 })
