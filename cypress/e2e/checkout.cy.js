@@ -2,11 +2,7 @@ describe('exercicio 2', () => {
   it('fluxo de checkout', () => {
     cy.login('Jasen_Donnelly3@hotmail.com', 'text123')
 
-    cy.visit('http://lojaebac.ebaconline.art.br/product/abominable-hoodie/')
-    cy.get('.button-variable-item-L').click()
-    cy.get('.button-variable-item-Green').click()
-    cy.get('.single_add_to_cart_button').click()
-
+    cy.addItemInCart(2970, 34, 'Blue', 2)
 
     cy.visit('http://lojaebac.ebaconline.art.br/carrinho/')
     cy.get('.checkout-button').click()
