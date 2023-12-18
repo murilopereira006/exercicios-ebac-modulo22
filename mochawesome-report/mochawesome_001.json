@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-12-18T21:18:01.529Z",
+    "end": "2023-12-18T21:18:14.392Z",
+    "duration": 12863,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "52d2051a-e794-4375-8afc-1b0c0c5ec325",
+      "title": "",
+      "fullFile": "cypress/e2e/checkout.cy.js",
+      "file": "cypress/e2e/checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "35c232c8-91e1-4177-8c5f-a4f3e1105ce2",
+          "title": "exercicio 2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "fluxo de checkout",
+              "fullTitle": "exercicio 2 fluxo de checkout",
+              "timedOut": null,
+              "duration": 8447,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('Jasen_Donnelly3@hotmail.com', 'text123');\ncy.addItemInCart(2970, 34, 'Blue', 2);\ncy.visit('http://lojaebac.ebaconline.art.br/carrinho/');\ncy.get('.checkout-button').click();\ncy.get('#payment_method_cod').click();\ncy.get('#terms').click();\ncy.get('#place_order').click();\ncy.contains('Obrigado. Seu pedido foi recebido.').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.checkout-button`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.checkout-button`, but never found it.\n    at Context.eval (webpack://exercicios-ebac-modulo22/./cypress/e2e/checkout.cy.js:8:7)",
+                "diff": null
+              },
+              "uuid": "da36f9c7-649a-4833-a687-f6e4ea7cc64a",
+              "parentUUID": "35c232c8-91e1-4177-8c5f-a4f3e1105ce2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "da36f9c7-649a-4833-a687-f6e4ea7cc64a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8447,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.2.0"
+    }
+  }
+}

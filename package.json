@@ -1,0 +1,25 @@
+{
+  "name": "exercicios-ebac-modulo22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murilopereira006/exercicios-ebac-modulo22.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murilopereira006/exercicios-ebac-modulo22/issues"
+  },
+  "homepage": "https://github.com/murilopereira006/exercicios-ebac-modulo22#readme",
+  "devDependencies": {
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
